@@ -4,6 +4,10 @@
 
 @import "_misc/normalize";
 
+/* --------- fonts --------- */
+
+@import "_misc/_fonts";
+
 /* --------- mixins --------- */
 
 @import "_misc/mixins";
@@ -11,5 +15,9 @@
 /* --------- adjustment --------- */
 
 @import "_misc/adjustment";
+
+/* --------- sections --------- */
+
+@import "_sections/_header";
 
 

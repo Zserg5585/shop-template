@@ -1,13 +1,13 @@
 {
-  "name": "loft-template",
+  "name": "shop-template",
   "version": "1.0.0",
-  "description": "template for good works",
+  "description": "template for shop",
   "main": "gulpfile.js",
-  "repository" : "https://github.com/wowua/loftschool-template",
+  "repository" : "https://github.com/Zserg5585/shop-template.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vladimir Sabantsev",
+  "author": "Sergii Zapolskyi",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.9.7",
