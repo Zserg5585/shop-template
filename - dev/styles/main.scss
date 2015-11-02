@@ -18,7 +18,7 @@
 
 /* --------- misc icons sprite --------- */
 
-$misc-sprite: sprite-map ('icons/_misc/*.png');
+$misc-sprite: sprite-map('icons/_misc/*.png', $spacing: 70px);
 
 /* --------- common colors --------- */
 
@@ -26,9 +26,15 @@ $black: #333333;
 $orange: #ff6600;
 $grey: #dee1e4;
 
+/* --------- plugins --------- */
+
+@import "_plugins/**/*";
+
+/* --------- widgets --------- */
+
+@import "_widgets/**/*";
+
 /* --------- sections --------- */
 
 @import "_sections/**/*";
-
-
 

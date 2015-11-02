@@ -5,13 +5,13 @@
 
 .categories {
     margin-bottom: 40px;
-    background: #ffffff;
 }
 
 .categories__list {
     border: 1px solid #dee1e4;
     @include border-radius(5px);
     overflow: hidden;
+    background: #ffffff;
 }
 
 .categories__item {
@@ -21,11 +21,11 @@
         border-top: 0 none;
     }
 
-    &:active {
+    &.active {
         .categories__link {
             background: #d9e5ea;
             color: #5d656c;
-      }
+        }
     }
 }
 
@@ -40,6 +40,11 @@
 
 /* --------- filter --------- */
 
+.filter__content {
+    display: none;
+    margin-top: 30px;
+}
+
 .filter__list {
     @extend .categories__list;
 }
@@ -51,10 +56,35 @@
     &:first-child {
         border-top: 0 none;
     }
+
+    &.active {
+        .filter__title {
+            &:after {
+//                @include get-sprite($select-tr-map, to-top);
+            }
+        }
+    }
 }
 
 .filter__title {
-    margin-bottom: 18px;
+    padding-right: 30px;
+    position: relative;
+
+    &:after {
+        content: '';
+//        @include get-sprite($select-tr-map, to-bottom);
+        position: absolute;
+        top: 7px;
+        right: 10px;
+    }
+}
+
+.filter__choose-item {
+    margin-top: 16px;
+
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 .filter__title-link {
@@ -62,8 +92,11 @@
     font-size: 16px;
     line-height: 18px;
     @include open-sans(semibold);
-    margin-bottom: 18px;
     text-decoration: none;
+}
+
+.filter__choose {
+    margin-bottom: 13px;
 }
 
 .filter__choose-label {
@@ -72,7 +105,7 @@
 }
 
 .filter__choose-elem {
-    border: 3px solid $orange;
+    border: 3px solid #dee1e4;
     width: 13px;
     height: 13px;
     @include border-radius(50%);
@@ -100,8 +133,8 @@
         border-color: $orange;
 
         &:after {
-          width: 9px;
-          height: 9px;
+            width: 9px;
+            height: 9px;
         }
     }
 }
@@ -127,12 +160,14 @@
             }
         }
     }
+
     .filter__choose-elem {
         width: 20px;
         height: 20px;
         @include border-radius(4px);
         background: $grey;
         @include transition(.2s);
+        border: 0 none;
 
         &:after {
             content: "";
@@ -140,11 +175,74 @@
             @include absolute-center;
             opacity: 0;
             @include transition(.2s);
-            @include get-sprite($misc-sprite, checkbox-icon);
+            @include get-sprite($misc-sprite, checkbox);
             @include border-radius(0);
-            width: 10px !important;
-            height: 13px !important;
+            width: 13px !important;
+            height: 10px !important;
         }
     }
 }
 
+.filter__reset {
+    color: #5db2fc;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* --------- colors --------- */
+
+.filter__colors-link {
+    border: 1px solid $grey;
+    width: 37px;
+    height: 37px;
+    display: block;
+}
+
+.filter__colors-item {
+    @include inlineblock();
+    border: 3px solid transparent;
+    margin-left: 10px;
+    margin-bottom: 8px;
+
+    &:hover {
+        border-color: $orange;
+    }
+}
+
+.filter__colors {
+    margin-left: -10px;
+}
+
+/* --------- slider --------- */
+
+.filter__slider-displays {
+    @include clearfix;
+    margin-bottom: 18px;
+}
+
+.filter__slider-left {
+    float: left;
+    width: 50%;
+}
+
+.filter__slider-right {
+    float: right;
+    width: 50%;
+}
+
+.filter__slider-input {
+    @extend .search__form-input;
+    padding: 10px 8px;
+    width: 83px;
+    @include inlineblock(middle);
+}
+
+.filter__slider-text {
+    @include inlineblock(middle);
+    font-size: 14px;
+    line-height: 16px;
+}

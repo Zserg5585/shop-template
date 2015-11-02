@@ -5,17 +5,19 @@
 /* --------- header - top --------- */
 
 .header__top {
-    border-bottom: 1px solid #ebebef;
+    border-bottom: 1px solid #ebedef;
     padding: 23px 0;
 }
+
 .socials__item {
     @include inlineblock(middle);
     margin-left: 12px;
 
-    &first-child {
+    &:first-child {
         margin-left: 0;
     }
 }
+
 .socials__link {
     display: block;
     width: 26px;
@@ -24,6 +26,7 @@
     background: #333333;
     position: relative;
 }
+
 .socials__icon {
     @include absolute-center;
 }
@@ -46,7 +49,7 @@ $socials-map: sprite-map ('icons/socials/*.png', '$spacing: 70px');
 
 .header__right {
     width: 50%;
-    float: right;
+    float: left;
 }
 
 .address {
@@ -54,8 +57,8 @@ $socials-map: sprite-map ('icons/socials/*.png', '$spacing: 70px');
     margin-right: 65px;
 
     &:before {
-        content: "";
-        @include get-sprite($misc-sprite, map-icon);
+        content: '';
+        @include get-sprite($misc-sprite, pin);
         @include inlineblock(middle);
         margin-right: 9px;
     }
@@ -68,10 +71,10 @@ $socials-map: sprite-map ('icons/socials/*.png', '$spacing: 70px');
     margin-right: 25px;
 
     &:before {
-        content: "";
+        content: '';
         @include inlineblock(middle);
         margin-right: 11px;
-        @include get-sprite($misc-sprite, phone-icon);
+        @include get-sprite($misc-sprite, phone);
     }
 }
 
@@ -145,3 +148,4 @@ $socials-map: sprite-map ('icons/socials/*.png', '$spacing: 70px');
     @include border-radius(0 5px 5px 0);
     border: 1px solid $orange;
 }
+
