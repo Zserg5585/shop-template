@@ -16,8 +16,19 @@
 
 @import "_misc/adjustment";
 
+/* --------- misc icons sprite --------- */
+
+$misc-sprite: sprite-map ('icons/_misc/*.png');
+
+/* --------- common colors --------- */
+
+$black: #333333;
+$orange: #ff6600;
+$grey: #dee1e4;
+
 /* --------- sections --------- */
 
-@import "_sections/_header";
+@import "_sections/**/*";
+
 
 

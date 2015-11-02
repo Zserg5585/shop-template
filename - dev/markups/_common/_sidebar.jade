@@ -19,11 +19,11 @@
                                     input(name="location" type="radio").filter__choose-input
                                     .filter__choose-elem
                                     .filter__choose-text= item
-            li.item__item
+            li.filter__item
                 .filter__title
                     a(href="#").filter__choose_link Бренды
                 .filter__content
-                    ul.filter__choose.filter__choose_chackboxes
+                    ul.filter__choose.filter__choose_checkboxes
                         - var items = ["Lenovo", "Apple", "Samsung", "Asus", "Motorola"]
                         each item in items
                             li.filter__choose-item
@@ -33,7 +33,7 @@
                                     .filter__choose-text= item
                     .filter__reset--wrap
                         a(href="#").filter__reset Сбросить фильтр
-            li.item__item
+            li.filter__item
                 .filter__title
                     a(href="#").filter__title-link Цена
                 .filter__content
@@ -46,7 +46,7 @@
                                 .filter__slider-text до
                                 input(name="" type="text" placeholder="").filter__slider-input.filter__slider-input_to
                         .filter__slider-element
-            li.item__item
+            li.filter__item
                 .filter__title
                     a(href="#").filter__title-link Цвет
                 .filter__content
@@ -55,11 +55,11 @@
                         each color in colors
                             li.filter__colors-item
                                 a(href="#" style="background-color: #" + color).filter__colors-link
-            li.item__item
+            li.filter__item
                 .filter__title
                     a(href="#").filter__title-link Операционная система
                 .filter__content
-                    ul.filter__choose.filter__choose_chackboxes
+                    ul.filter__choose.filter__choose_checkboxes
                         - var items = ["Android", "iOS", "Symbian", "Windows Mobile", "Custom"]
                         each item in items
                             li.filter__choose-item
