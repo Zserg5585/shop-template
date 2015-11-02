@@ -1,7 +1,7 @@
 extends ../main
 
 block title
-	| Главная страница (main.psd)
+	| Главная страница
 
 block content
 	article.content-wrapper
@@ -9,19 +9,84 @@ block content
 			.main-title
 				| Мобильные телефоны
 			.main-content
-
 				include ../_common/_sidebar
 
 				.content
 					.sort
+						.sort__left
+							.sort__select--wrap
+								.sort__title
+									| Сортировать по
+								.sort__select
+									select.sort__select-elem
+										- var options = ["по цене", "по популярности"]
+										each option in options
+											option(value="")= option
+						.sort__right
+							.sort__title
+								| Вид каталога
+							.sort__view
+								ul.sort__view-list
+									- var items = ['rows', 'grids', 'lines']
+									each item in items
+										li(class="sort__view-item sort__view_" + item data-view= item)
+											a(href="#").sort__view-link
+												.sort__view-icon
 					.products
+						ul.products__list#products-list
+							- for (var i = 0; i < 9; i++)
+								li.products__item
+									.products__item-inner
+										.products__left
+											.products__slideshow
+												.products__slideshow-block
+													a(href="#").products__slideshow-display
+														img(src="http://lorempixel.com/200/200/technics/6" alt="").products__slideshow-img
+													ul.products__slideshow-thumbs
+														- for (var j = 0; j < 3; j++)
+															li.products__slideshow-item
+																a(href="#").products__slideshow-link
+																	img(src="http://lorempixel.com/45/45/technics/" + j alt="").products__slideshow-thumb-img
+												.products__article
+													.products__article-word Артикул
+													.products__article-num 189238
+											.products__desc
+												.products__desc-title Samsung FT-I9301I GALAXY S 3
+												ul.products__desc-options
+													- var options = {'Тип SIM-карты': "Micro-SIM", "Количество SIM-карт" : "1", "Цвет" : "Белый", "ОС" : "Android", "Связь 3G" : "Есть", "4G (LTE)" : "Нет", "GPS-модуль" : "Есть"}
+													- var index = 0;
+													- for (item in options)
+														li(class="products__option-item" + (!(index++ % 2) ? ' products__option-item_colored' : ''))
+															.products__option-key= item
+															.products__option-value= options[item]
+												div(class="products__rating" data-rating="2")
+										.products__right
+											.products__info
+												.products__price 11 290
+													i.rub
+											.products__info-bottom
+												a(href="#").products__buy-btn В корзину
+												.products__availability
+													| В наличии
+					.pagination
+						ul.pagination__list
+							li.pagination__item.pagination__item_prev
+								a(href="#").pagination__link
+									.pagination__mark
+							- for (var i = 1; i < 4; i++)
+								li.pagination__item
+									a(href="#").pagination__link
+										.pagination__mark= i
+							li.pagination__item.pagination__item_next
+								a(href="#").pagination__link
+									.pagination__mark
 			.attension
 				.main-title
 					| Важная информация
 				.attension__text
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at erat ante. Pellentesque interdum tortor in velit interdum maximus quis quis neque. Integer nec ipsum consequat, pretium dui a, facilisis ante. Integer tortor erat, venenatis sed interdum ut, ultrices id diam. Aenean metus erat, posuere sed lobortis nec, rutrum at libero. In sapien orci, euismod non condimentum nec, mollis non eros. Vestibulum placerat bibendum ultricies. Maecenas dui turpis, imperdiet et sodales vitae, hendrerit et turpis.
-					p Quisque ullamcorper sed nibh quis molestie. Aenean ornare velit leo, vel laoreet lorem luctus ut. Nam non euismod nunc, sollicitudin posuere ligula. Etiam mollis, felis non venenatis efficitur, ipsum lectus ultrices neque, vitae semper diam ex ac lectus. In volutpat a metus id rutrum. Duis tempus aliquet ultricies. In at dui nec tellus tempus imperdiet. Etiam dignissim mollis tellus id gravida. Suspendisse lacinia molestie tellus nec condimentum. Phasellus sollicitudin velit nec sapien commodo, condimentum.
-					p Pellentesque a diam turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ultricies enim sit amet dictum tincidunt. Donec consequat purus sit amet dapibus molestie. Cras magna eros, placerat et gravida sit amet, sollicitudin quis augue. Duis elementum auctor fermentum. Nunc mi metus, pretium in turpis et, euismod commodo neque. Phasellus ut ex leo. Fusce a quam quis lacus euismod lobortis vel sed purus. Donec ut gravida nulla. Ut ultricies tortor.
-					p Morbi efficitur enim eget purus vulputate iaculis. Ut accumsan blandit vulputate. Vivamus elit augue, pretium quis urna sit amet, maximus lacinia arcu. Etiam porta felis iaculis, malesuada eros sit amet, accumsan mi. Nam sed mi iaculis, ultricies enim eu, malesuada tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse eu faucibus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec dapibus sapien nec laoreet eleifend.
-					p Fusce felis diam, ullamcorper at mi vel, placerat auctor tortor. Maecenas mollis diam quam, et tempus quam ullamcorper quis. Integer ac augue vitae tortor congue accumsan eget a nulla. Mauris non imperdiet purus, sit amet sagittis mauris. Sed a mauris sapien. Curabitur blandit turpis mattis ipsum suscipit, vitae sagittis tellus sagittis. Phasellus suscipit ex quis lorem sodales egestas. Phasellus lacinia id diam ac iaculis. Duis id tellus aliquet, euismod metus ac, mollis mi. Nullam fermentum sit amet metus vitae viverra.
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at erat ante. Pellentesque interdum tortor in velit interdum maximus quis quis neque. Integer nec ipsum consequat, pretium dui a, facilisis ante. Integer tortor erat, venenatis sed interdum ut, ultrices id diam. Aenean metus erat, posuere sed lobortis nec, rutrum at libero. In sapien orci, euismod non condimentum nec, mollis non eros. Vestibulum placerat bibendum ultricies. Maecenas dui turpis, imperdiet et sodales vitae, hendrerit et turpis.
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis cumque debitis, esse, fugit hic ipsum libero molestias nam nisi quod repudiandae sapiente tenetur? Ad cumque molestias nostrum qui ut?
