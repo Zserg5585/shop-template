@@ -1,5 +1,5 @@
 .footer {
-	background: url('/img/bg/footer_lodyas.png') center center;
+	background: url('/img/bg/footer_lodyas.png') repeat repeat;
 	position: relative;
 }
 
@@ -94,3 +94,24 @@ $dark-socials-map: sprite-map('icons/socials-dark/*.png', $spacing: 70px);
 .footer__copyright {
 	padding: 8px 0;
 }
+
+/* --------- Прибиваем футер к низу --------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 0 -223px 0;
+  padding: 0;
+}
+.footer {
+  height: 223px;
+  margin: 0;
+  padding: 0;
+}
+/* --------- Прибиваем футер к низу - END --------- */
