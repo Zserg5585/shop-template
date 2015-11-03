@@ -5,6 +5,7 @@
 }
 
 .nav__list {
+  	@include inlineblock();
 	text-align: justify;
 	font-size: 0;
 

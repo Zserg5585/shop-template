@@ -1,5 +1,5 @@
 .footer {
-	background: url('/img/bg/footer_lodyas.png') repeat repeat;
+	background: url('../img/bg/footer_lodyas.png') repeat repeat;
 	position: relative;
 }
 
@@ -108,6 +108,12 @@ html, body {
   height: 100%;
   margin: 0 0 -223px 0;
   padding: 0;
+  overflow: hidden;
+}
+.wrapper:after {
+  content: " ";
+  height: 223px;
+  display: block;
 }
 .footer {
   height: 223px;
